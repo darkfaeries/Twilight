@@ -31,7 +31,7 @@ public class Army
 
     private const int WarsunThreshold = 2;
     private int FlagshipThreshold => FlagshipUp ? 4 : 6;
-    private int DreadnoughtThreshold => DreadnoughtUp ? 3 : 4;
+    private const int DreadnoughtThreshold = 4;
     private int CruiserThreshold => CruiserUp ? 5 : 6;
     private int DestroyerThreshold => DestroyerUp ? 7 : 8;
     private const int CarrierThreshold = 8;
