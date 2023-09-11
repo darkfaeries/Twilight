@@ -45,20 +45,20 @@ public class Battle
         
         // TODO remove debug and set montecarlo to 10000
 
-        var i = 1;
+        //var i = 1;
         
         while (true)
         {
             // debug
             
-            Console.WriteLine($"================ Round {i} ====================");
+            //Console.WriteLine($"================ Round {i} ====================");
             
             // producing hits independently
             
             var aHits = a.ProduceHits();
-            Console.WriteLine($"attacker got {aHits}");
+            //Console.WriteLine($"attacker got {aHits}");
             var dHits = d.ProduceHits();
-            Console.WriteLine($"defender got {dHits}");
+            //Console.WriteLine($"defender got {dHits}");
             
             // assigning hits
 
@@ -67,31 +67,31 @@ public class Battle
             
             // debug
             
-            if (aDead) Console.WriteLine("atk is dead");
-            if (dDead) Console.WriteLine("def is dead");
+            //if (aDead) Console.WriteLine("atk is dead");
+            //if (dDead) Console.WriteLine("def is dead");
             
             /*Console.WriteLine("Attacker army:");
             Console.WriteLine(a);
             Console.WriteLine("Defender army:");
             Console.WriteLine(d);*/
-            i += 1;
+            //i += 1;
             
             // returning outcome (or continuing)
 
             if (aDead && dDead)
             {
-                Console.WriteLine("draw");
+                //Console.WriteLine("draw");
                 return Outcome.Draw;
             }
             if (aDead)
             {
-                Console.WriteLine("defender wins");
+                //Console.WriteLine("defender wins");
                 return Outcome.DefenderWins;
             }
 
             if (dDead)
             {
-                Console.WriteLine("attacker wins");
+                //Console.WriteLine("attacker wins");
                 return Outcome.AttackerWins;
             }
         }

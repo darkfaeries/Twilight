@@ -6,7 +6,7 @@
         Width="1600" Height="1400"
         x:Class="Twilight.MainWindow"
         Title="Twilight">
-        <StackPanel Spacing="30">
+        <StackPanel Spacing="14">
                 <!-- Title-->
                 <Label FontSize="40" HorizontalAlignment="Center">Калькулятор боя, версия 1.0</Label>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="400">
@@ -14,56 +14,87 @@
                         <Label FontSize="30">Защищающийся</Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkWs"></NumericUpDown>
+                        <ComboBox FontSize="30">
+                                <ComboBoxItem>Русы</ComboBoxItem>
+                                <ComboBoxItem>Ящеры</ComboBoxItem>
+                        </ComboBox>
+                        <Label FontSize="30">Фракция</Label>
+                        <ComboBox FontSize="30">
+                                <ComboBoxItem>Русы</ComboBoxItem>
+                                <ComboBoxItem>Ящеры</ComboBoxItem>
+                        </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkWs" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="2"></NumericUpDown>
                         <Label FontSize="30">Солнца Войны</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefWs"></NumericUpDown>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefWs" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="2"></NumericUpDown>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkFlUp">Улучшен (Nomad)</CheckBox>
-                        <CheckBox Name="AtkFl"></CheckBox>
+                        <CheckBox FontSize="30" Name="AtkFlUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшен (Nomad)</CheckBox>
+                        <CheckBox Name="AtkFl" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper"></CheckBox>
                         <Label FontSize="30">Флагман</Label>
-                        <CheckBox Name="DefFl"></CheckBox>
-                        <CheckBox FontSize="30" Name="DefFlUp">Улучшен (Nomad)</CheckBox>
+                        <CheckBox Name="DefFl" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper"></CheckBox>
+                        <CheckBox FontSize="30" Name="DefFlUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшен (Nomad)</CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkDnUp">Улучшены</CheckBox>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkDn"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="AtkDnUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkDn" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="5"></NumericUpDown>
                         <Label FontSize="30">Дредноуты</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefDn"></NumericUpDown>
-                        <CheckBox FontSize="30" Name="DefDnUp">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefDn" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="5"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="DefDnUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkCUp">Улучшены</CheckBox>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkC"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="AtkCUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkC" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="8"></NumericUpDown>
                         <Label FontSize="30">Крейсеры</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefC"></NumericUpDown>
-                        <CheckBox FontSize="30" Name="DefCUp">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefC" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="8"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="DefCUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkDUp">Улучшены</CheckBox>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkD"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="AtkDUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkD" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="8"></NumericUpDown>
                         <Label FontSize="30">Эсминцы</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefD"></NumericUpDown>
-                        <CheckBox FontSize="30" Name="DefDUp">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefD" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="8"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="DefDUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkCaUp">Улучшены</CheckBox>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkCa"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="AtkCaUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkCa" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="4"></NumericUpDown>
                         <Label FontSize="30">Транспортники</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefCa"></NumericUpDown>
-                        <CheckBox FontSize="30" Name="DefCaUp">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefCa" ValueChanged="NumUpDownValChangeWrapper" Minimum="0" Maximum="4"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="DefCaUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
-                        <CheckBox FontSize="30" Name="AtkFUp">Улучшены</CheckBox>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkF"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="AtkFUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="AtkF" ValueChanged="NumUpDownValChangeWrapper" Minimum="0"></NumericUpDown>
                         <Label FontSize="30">Истребители</Label>
-                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefF"></NumericUpDown>
-                        <CheckBox FontSize="30" Name="DefFUp">Улучшены</CheckBox>
+                        <NumericUpDown FontSize="30" ShowButtonSpinner="False" Name="DefF" ValueChanged="NumUpDownValChangeWrapper" Minimum="0"></NumericUpDown>
+                        <CheckBox FontSize="30" Name="DefFUp" Checked="CheckBoxRecalcWrapper" Unchecked="CheckBoxRecalcWrapper">Улучшены</CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
+                        <Label FontSize="30" Name="AtkResLabel"></Label>
+                        <Label FontSize="30">Ресурсы</Label>
+                        <Label FontSize="30" Name="DefResLabel"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
+                        <Label FontSize="30" Name="AtkHpLabel"></Label>
+                        <Label FontSize="30">Хиты армии</Label>
+                        <Label FontSize="30" Name="DefHpLabel"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
+                        <Label FontSize="30" Name="AtkRHitsLabel"></Label>
+                        <Label FontSize="30">Попаданий за раунд</Label>
+                        <Label FontSize="30" Name="DefRHitsLabel"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="100">
+                        <Label FontSize="30" Name="AtkAfbLabel"></Label>
+                        <Label FontSize="30">Заград. огонь</Label>
+                        <Label FontSize="30" Name="DefAfbLabel"></Label>
                 </StackPanel>
                 <Button FontSize="30" Click="SimulateClick">Симулировать!</Button>
-                <Label FontSize="30" IsVisible="False" Name="StandbyLabel"></Label>
-                <Label FontSize="20" Name="AtkWinsLabel"></Label>
-                <Label FontSize="20" Name="DefWinsLabel"></Label>
-                <Label FontSize="20" Name="DrawLabel"></Label>
+                <Label FontSize="40" IsVisible="False" Name="StandbyLabel"></Label>
+                <Label FontSize="30" Name="AtkWinsLabel"></Label>
+                <Label FontSize="30" Name="DefWinsLabel"></Label>
+                <Label FontSize="30" Name="DrawLabel"></Label>
         </StackPanel>
 </Window>
